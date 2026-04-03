@@ -67,7 +67,7 @@ namespace WpfApp1
                 return DocentRate;
             if (ProfessorRadio.IsChecked == true)
                 return ProfessorRate;
-            return AssistantRate; // по умолчанию
+            return AssistantRate; 
         }
     }
 }

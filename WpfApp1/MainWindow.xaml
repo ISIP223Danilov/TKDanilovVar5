@@ -17,11 +17,11 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <!-- Поле ввода количества часов -->
+      
         <TextBlock Grid.Row="0" Grid.Column="0" Text="Количество часов:" VerticalAlignment="Center" Margin="5"/>
         <TextBox x:Name="HoursTextBox" Grid.Row="0" Grid.Column="1" Margin="5" Width="150" HorizontalAlignment="Left"/>
 
-        <!-- Выбор должности (RadioButton) -->
+      
         <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Margin="5">
             <TextBlock Text="Должность:" Margin="0,0,0,5"/>
             <RadioButton x:Name="AssistantRadio" Content="Ассистент (150 руб/ч)" GroupName="Position" IsChecked="True" Margin="10,0"/>
@@ -29,15 +29,15 @@
             <RadioButton x:Name="ProfessorRadio" Content="Профессор (350 руб/ч)" GroupName="Position" Margin="10,0"/>
         </StackPanel>
 
-        <!-- Выбор налога (CheckBox) -->
+        
         <StackPanel Grid.Row="2" Grid.ColumnSpan="2" Margin="5">
             <CheckBox x:Name="TaxCheckBox" Content="Подходящий налог (13%)" IsChecked="True"/>
         </StackPanel>
 
-        <!-- Кнопка расчёта -->
+       
         <Button x:Name="CalculateButton" Grid.Row="3" Grid.ColumnSpan="2" Content="Вычислить" Width="100" Height="30" Margin="5" Click="CalculateButton_Click" HorizontalAlignment="Left"/>
 
-        <!--Результаты -->
+       
         <TextBlock Grid.Row="4" Grid.Column="0" Text="Начислено:" Margin="5" VerticalAlignment="Center"/>
         <TextBlock x:Name="AccruedTextBlock" Grid.Row="4" Grid.Column="1" Margin="5" FontWeight="Bold"/>
 
