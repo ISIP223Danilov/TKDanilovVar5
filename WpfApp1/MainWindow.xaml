@@ -1,12 +1,47 @@
 ﻿<Window x:Class="WpfApp1.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfApp1"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="Расчёт зарплаты преподавателя" Height="350" Width="400"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Поле ввода количества часов -->
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Количество часов:" VerticalAlignment="Center" Margin="5"/>
+        <TextBox x:Name="HoursTextBox" Grid.Row="0" Grid.Column="1" Margin="5" Width="150" HorizontalAlignment="Left"/>
+
+        <!-- Выбор должности (RadioButton) -->
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Margin="5">
+            <TextBlock Text="Должность:" Margin="0,0,0,5"/>
+            <RadioButton x:Name="AssistantRadio" Content="Ассистент (150 руб/ч)" GroupName="Position" IsChecked="True" Margin="10,0"/>
+            <RadioButton x:Name="DocentRadio" Content="Доцент (250 руб/ч)" GroupName="Position" Margin="10,0"/>
+            <RadioButton x:Name="ProfessorRadio" Content="Профессор (350 руб/ч)" GroupName="Position" Margin="10,0"/>
+        </StackPanel>
+
+        <!-- Выбор налога (CheckBox) -->
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="2" Margin="5">
+            <CheckBox x:Name="TaxCheckBox" Content="Подходящий налог (13%)" IsChecked="True"/>
+        </StackPanel>
+
+        <!-- Кнопка расчёта -->
+        <Button x:Name="CalculateButton" Grid.Row="3" Grid.ColumnSpan="2" Content="Вычислить" Width="100" Height="30" Margin="5" Click="CalculateButton_Click" HorizontalAlignment="Left"/>
+
+        <!--Результаты -->
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="Начислено:" Margin="5" VerticalAlignment="Center"/>
+        <TextBlock x:Name="AccruedTextBlock" Grid.Row="4" Grid.Column="1" Margin="5" FontWeight="Bold"/>
+
+        <TextBlock Grid.Row="5" Grid.Column="0" Text="в том числе налог:" Margin="5" VerticalAlignment="Center"/>
+        <TextBlock x:Name="TaxAmountTextBlock" Grid.Row="5" Grid.Column="1" Margin="5" FontWeight="Bold"/>
     </Grid>
 </Window>
